@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un paso a la vez — Donatón para Rubén Darío</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#1F2937',      /* Gris oscuro para texto */
+          ink2: '#111827',     /* Gris más oscuro para títulos */
+          stone: '#E5E7EB',    /* Gris claro para bordes */
+          brandGreen: '#16A34A', /* Verde principal para botones */
+          brandGreenHover: '#15803D' /* Verde oscuro para hover */
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['Work Sans', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Work Sans', sans-serif; }
+  h1, h2, h3, .display { font-family: 'Fraunces', serif; }
+
+  /* --- Camino de pasos (signature element) --- */
+  .camino-track {
+    position: relative;
+    height: 6px;
+    background: #E5E7EB;
+    border-radius: 999px;
+    overflow: visible;
+  }
+  .camino-fill {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    background: linear-gradient(90deg, #4ADE80, #16A34A);
+    border-radius: 999px;
+    width: 0%;
+    animation: fillPath 1.6s ease-out 0.3s forwards;
+  }
+  @keyframes fillPath {
+    to { width: var(--progress, 42%); }
+  }
+  .footprint {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 2px solid #16A34A;
+  }
+  .footprint.reached {
+    background: #16A34A;
+  }
+
+  .focus-ring:focus-visible {
+    outline: 3px solid #16A34A;
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body class="bg-white text-ink">
+
+  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-stone">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <span class="display text-lg font-semibold tracking-tight text-ink2">Rubén Darío · un paso a la vez</span>
+      <a href="#donar" class="focus-ring text-sm font-semibold bg-brandGreen text-white px-4 py-2 rounded-full hover:bg-brandGreenHover transition-colors shadow-sm">
+        Quiero ayudar
+      </a>
+    </div>
+  </header>
+
+  <section class="max-w-5xl mx-auto px-6 pt-16 pb-20 grid md:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+    <div>
+      <p class="uppercase tracking-widest text-sm text-brandGreen font-semibold mb-4">Donatón solidaria</p>
+      <h1 class="display text-4xl md:text-5xl leading-[1.1] text-ink2 font-semibold mb-6">
+        Ayúdame a dar el siguiente paso hacia una nueva vida
+      </h1>
+      <p class="text-lg text-ink/80 leading-relaxed mb-8 max-w-md">
+        Cada aporte me acerca a volver a caminar, recuperar mi independencia y regresar a lo que más me gusta: trabajar y salir adelante.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#donar" class="focus-ring bg-brandGreen text-white px-6 py-3 rounded-full font-semibold hover:bg-brandGreenHover transition-colors shadow-md">
+          Quiero donar
+        </a>
+        <a href="#historia" class="focus-ring border border-stone text-ink2 px-6 py-3 rounded-full font-semibold hover:bg-gray-50 transition-colors">
+          Conocer mi historia
+        </a>
+      </div>
+    </div>
+
+    <div class="flex justify-center w-full">
+      <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-50 border-4 border-stone overflow-hidden shadow-lg shrink-0">
+        <img src="WhatsApp%20Image%202026-07-08%20at%2018.56.16.jpeg" alt="Foto de Rubén Darío" class="absolute inset-0 w-full h-full object-cover object-[75%_40%]">
+      </div>
+    </div>
+  </section>
+
+  <section id="historia" class="bg-white border-y border-stone">
+    <div class="max-w-3xl mx-auto px-6 py-16">
+      <p class="uppercase tracking-widest text-sm text-brandGreen font-semibold mb-3">Mi historia</p>
+      <h2 class="display text-3xl text-ink2 font-semibold mb-6">Una vida de trabajo, esfuerzo y servicio</h2>
+      <p class="text-ink/80 leading-relaxed mb-4">
+        Mi nombre es Rubén Darío Piñeros Bermúdez, tengo 44 años y nací en Bogotá. Durante gran parte de mi vida he trabajado en el sector del transporte. Fui taxista, administrador y, durante los últimos años, me he dedicado al transporte de pacientes, medicamentos y servicios médicos, una labor que siempre desempeñé con compromiso y vocación de servicio.
+      </p>
+      <p class="text-ink/80 leading-relaxed mb-6">
+        Hace aproximadamente 15 años fui diagnosticado con diabetes. Durante mucho tiempo logré mantener la enfermedad bajo control y continué trabajando como siempre, sin imaginar que años después mi vida cambiaría por completo.
+      </p>
+
+      <h3 class="display text-2xl text-ink2 font-semibold mb-4 mt-8">Una batalla que no esperaba</h3>
+      <p class="text-ink/80 leading-relaxed mb-4">
+        Hace algunos años una lesión en uno de mis pies desencadenó complicaciones asociadas al pie diabético. Desde entonces enfrenté múltiples tratamientos e intervenciones quirúrgicas que, afortunadamente, me permitieron seguir adelante por un tiempo.
+      </p>
+      <p class="text-ink/80 leading-relaxed mb-4">
+        Sin embargo, en noviembre de 2025 tuve que ser hospitalizado nuevamente debido al deterioro de mi salud. En junio de este año el dolor aumentó y comenzaron nuevas complicaciones. Fueron días difíciles, llenos de incertidumbre y esperanza de que todo pudiera mejorar.
+      </p>
+      <p class="text-ink/80 leading-relaxed mb-6">
+        Los médicos hicieron todo lo posible para salvar mi pierna, pero la infección avanzó rápidamente. Después de cuatro cirugías, la única alternativa para salvar mi vida fue amputar mi pierna. Ese día cambió mi historia para siempre.
+      </p>
+
+      <h3 class="display text-2xl text-ink2 font-semibold mb-4 mt-8">Hoy comienza un nuevo reto</h3>
+      <p class="text-ink/80 leading-relaxed mb-4">
+        Perder una pierna significa empezar de nuevo. Significa aprender a caminar otra vez, adaptarme a una prótesis, realizar un largo proceso de rehabilitación y recuperar la posibilidad de volver a trabajar para salir adelante con dignidad.
+      </p>
+      <p class="text-ink/80 leading-relaxed mb-4">
+        Quienes me conocen saben que siempre he sido una persona trabajadora, que nunca ha tenido miedo al esfuerzo y que siempre ha buscado salir adelante por sus propios medios.
+      </p>
+      <p class="text-ink2 font-semibold leading-relaxed">
+        Hoy, por primera vez, necesito pedir ayuda.
+      </p>
+    </div>
+  </section>
+
+  <section id="meta" class="bg-gray-50 border-b border-stone">
+    <div class="max-w-3xl mx-auto px-6 py-16">
+      <p class="uppercase tracking-widest text-sm text-brandGreen font-semibold mb-3 text-center">¿Para qué será tu donación?</p>
+      <h2 class="display text-3xl text-ink2 font-semibold mb-6 text-center">Cada aporte cambia una vida</h2>
+      
+      <div class="bg-white rounded-2xl border border-stone p-6 md:p-8 mb-10 max-w-2xl mx-auto shadow-sm">
+        <p class="text-ink/80 text-sm mb-4 font-medium">Cada aporte estará destinado a cubrir las necesidades que hacen posible mi recuperación:</p>
+        <ul class="text-sm text-ink/80 space-y-2">
+          <li class="flex items-center gap-2">
+            <span class="text-brandGreen font-bold">•</span> Prótesis y proceso de adaptación.
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-brandGreen font-bold">•</span> Terapias de rehabilitación física.
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-brandGreen font-bold">•</span> Elementos médicos y de movilidad.
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-brandGreen font-bold">•</span> Medicamentos e insumos necesarios.
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-brandGreen font-bold">•</span> Gastos básicos mientras puedo volver a trabajar.
+          </li>
+        </ul>
+        <p class="text-xs italic text-ink/50 mt-4">Cada donación, sin importar su valor, representa un paso más hacia mi recuperación.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-stone p-8 md:p-10 shadow-sm">
+        <div class="flex items-baseline justify-between mb-2">
+          <span class="display text-3xl font-semibold text-ink2">$4.200.000</span>
+          <span class="text-ink/60 text-sm">de $10.000.000 COP</span>
+        </div>
+
+        <div class="camino-track my-8" style="--progress: 42%;">
+          <div class="camino-fill"></div>
+          <div class="footprint reached" style="left: 0%;"></div>
+          <div class="footprint reached" style="left: 21%;"></div>
+          <div class="footprint reached" style="left: 42%;"></div>
+          <div class="footprint" style="left: 63%;"></div>
+          <div class="footprint" style="left: 84%;"></div>
+          <div class="footprint" style="left: 100%;"></div>
+        </div>
+
+        <p class="text-sm text-ink/60">
+          Meta y avance de ejemplo — actualízalos con las cifras reales de la
+          campaña. Cada huella marca un 20% del camino recorrido.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="agradecimientos" class="bg-white border-b border-stone py-16">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="uppercase tracking-widest text-sm text-brandGreen font-semibold mb-3 text-center">Gracias por caminar conmigo</p>
+      <p class="text-ink/80 leading-relaxed text-center mb-8">
+        Quiero expresar mi más profundo agradecimiento a Dios y a todas las personas que han estado a mi lado durante este proceso.
+      </p>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="bg-gray-50 p-5 rounded-xl border border-stone">
+          <span class="font-semibold text-ink2 block mb-1">A mis padres</span>
+          <p class="text-sm text-ink/70">Guillermo Sarmiento y Linda Piñeros, por su amor incondicional y por no dejarme desfallecer en los momentos más difíciles.</p>
+        </div>
+        <div class="bg-gray-50 p-5 rounded-xl border border-stone">
+          <span class="font-semibold text-ink2 block mb-1">A mis hermanos</span>
+          <p class="text-sm text-ink/70">Andrea Sarmiento Piñeros, Guillermo Sarmiento Piñeros y Angélica Sarmiento Piñeros, por sosterme con su cariño, su compañía y su fortaleza.</p>
+        </div>
+        <div class="bg-gray-50 p-5 rounded-xl border border-stone sm:col-span-2">
+          <span class="font-semibold text-ink2 block mb-1">A familiares y amigos</span>
+          <p class="text-sm text-ink/70">Y gracias a mis tíos, familiares, amigos y a todas las personas que han estado presentes con una oración, una llamada, un mensaje de ánimo o un gesto de solidaridad. Cada uno de ustedes ha sido parte fundamental de este camino y me ha dado fuerzas para seguir creyendo que puedo salir adelante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="donar" class="bg-white">
+    <div class="max-w-5xl mx-auto px-6 py-16">
+      <p class="uppercase tracking-widest text-sm text-brandGreen font-semibold mb-3 text-center">Cómo donar</p>
+      <h2 class="display text-3xl font-semibold mb-10 text-center text-ink2">Elige el medio que más te facilite</h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-gray-50 border border-stone rounded-2xl p-6">
+          <h3 class="display text-xl font-semibold mb-2 text-ink2">Nequi</h3>
+          <p class="text-ink/70 text-sm mb-4">Transferencia directa desde la app.</p>
+          <p class="font-mono text-lg font-semibold text-brandGreen">[ número de Nequi ]</p>
+          <p class="text-sm text-ink/60 mt-1">A nombre de: Rubén Darío Piñeros</p>
+        </div>
+
+        <div class="bg-gray-50 border border-stone rounded-2xl p-6">
+          <h3 class="display text-xl font-semibold mb-2 text-ink2">Bancolombia</h3>
+          <p class="text-ink/70 text-sm mb-4">Cuenta de ahorros.</p>
+          <p class="font-mono text-lg font-semibold text-brandGreen">[ número de cuenta ]</p>
+          <p class="text-sm text-ink/60 mt-1">A nombre de: Rubén Darío Piñeros</p>
+        </div>
+
+        <div class="bg-gray-50 border border-stone rounded-2xl p-6">
+          <h3 class="display text-xl font-semibold mb-2 text-ink2">En persona</h3>
+          <p class="text-ink/70 text-sm mb-4">Si prefieres entregar tu aporte directamente.</p>
+          <p class="text-sm text-ink/70">Contacta a: [ nombre y teléfono de contacto de la familia ]</p>
+        </div>
+      </div>
+
+      <p class="text-center text-ink/50 text-sm mt-8">
+        Sugerencia: al hacer la transferencia, escribe "Donatón Rubén Darío" en la
+        descripción para llevar el control de los aportes.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 border-y border-stone">
+    <div class="max-w-3xl mx-auto px-6 py-12 text-center">
+      <div class="bg-white border-l-4 border-brandGreen p-6 rounded-r-xl max-w-xl mx-auto text-left shadow-sm">
+        <p class="display text-lg italic text-ink2 mb-2">
+          “Perdí una pierna, pero no las ganas de salir adelante. Hoy necesito de tu ayuda para volver a caminar, recuperar mi independencia y comenzar una nueva etapa de mi vida.”
+        </p>
+        <span class="text-xs uppercase font-semibold text-brandGreen tracking-wider">— Rubén Darío Piñeros Bermúdez</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white max-w-3xl mx-auto px-6 py-16 text-center">
+    <h2 class="display text-2xl text-ink2 font-semibold mb-4">¿No puedes donar? También ayuda compartir</h2>
+    <p class="text-ink/70 mb-6 max-w-md mx-auto">
+      Perdí una pierna, pero no perdí mis ganas de vivir, de trabajar y de volver a caminar. Con tu ayuda podré iniciar esta nueva etapa con esperanza y la posibilidad de recuperar mi independencia. No importa el valor de tu aporte. Lo verdaderamente importante es que, con cada donación, me ayudas a acercarme un poco más a la meta de volver a ponerme de pie.
+    </p>
+    <button onclick="navigator.share ? navigator.share({title:'Ayudemos a Rubén Darío', url:location.href}) : alert('Copia el enlace de esta página para compartirlo')"
+      class="focus-ring bg-brandGreen text-white px-6 py-3 rounded-full font-semibold hover:bg-brandGreenHover transition-colors shadow-md">
+      Compartir esta página
+    </button>
+  </section>
+
+  <footer class="border-t border-stone bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6 py-10 text-center text-sm text-ink/60">
+      <p class="font-medium text-ink mb-3">Cada aporte cambia una vida. Gracias por creer en las segundas oportunidades.</p>
+      <a href="#donar" class="inline-block mb-6 font-semibold text-brandGreen hover:text-brandGreenHover transition-colors">Quiero donar ahora ❤️</a>
+      <p>Contacto: [ correo o teléfono ]</p>
+    </div>
+  </footer>
+
+</body>
+</html>
