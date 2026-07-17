@@ -51,7 +51,7 @@
     animation: fillPath 1.6s ease-out 0.3s forwards;
   }
   @keyframes fillPath {
-    to { width: var(--progress, 42%); }
+    to { width: var(--progress, 0%); }
   }
   .footprint {
     position: absolute;
@@ -74,6 +74,7 @@
 </head>
 <body class="bg-white text-ink">
 
+  <!-- NAV -->
   <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-stone">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <span class="display text-lg font-semibold tracking-tight text-ink2">Rubén Darío · un paso a la vez</span>
@@ -83,6 +84,7 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="max-w-5xl mx-auto px-6 pt-16 pb-20 grid md:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
     <div>
       <p class="uppercase tracking-widest text-sm text-brandGreen font-semibold mb-4">Donatón solidaria</p>
@@ -102,13 +104,16 @@
       </div>
     </div>
 
+    <!-- CONTENEDOR DE FOTO AJUSTADO -->
     <div class="flex justify-center w-full">
       <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-50 border-4 border-stone overflow-hidden shadow-lg shrink-0">
+        <!-- object-[75%_40%] centra el rostro basado en la composición de la foto original -->
         <img src="WhatsApp%20Image%202026-07-08%20at%2018.56.16.jpeg" alt="Foto de Rubén Darío" class="absolute inset-0 w-full h-full object-cover object-[75%_40%]">
       </div>
     </div>
   </section>
 
+  <!-- HISTORIA -->
   <section id="historia" class="bg-white border-y border-stone">
     <div class="max-w-3xl mx-auto px-6 py-16">
       <p class="uppercase tracking-widest text-sm text-brandGreen font-semibold mb-3">Mi historia</p>
@@ -144,6 +149,7 @@
     </div>
   </section>
 
+  <!-- META / CAMINO -->
   <section id="meta" class="bg-gray-50 border-b border-stone">
     <div class="max-w-3xl mx-auto px-6 py-16">
       <p class="uppercase tracking-widest text-sm text-brandGreen font-semibold mb-3 text-center">¿Para qué será tu donación?</p>
@@ -173,28 +179,28 @@
 
       <div class="bg-white rounded-3xl border border-stone p-8 md:p-10 shadow-sm">
         <div class="flex items-baseline justify-between mb-2">
-          <span class="display text-3xl font-semibold text-ink2">$4.200.000</span>
+          <span class="display text-3xl font-semibold text-ink2">0</span>
           <span class="text-ink/60 text-sm">de $10.000.000 COP</span>
         </div>
 
-        <div class="camino-track my-8" style="--progress: 42%;">
+        <div class="camino-track my-8" style="--progress: 0%;">
           <div class="camino-fill"></div>
           <div class="footprint reached" style="left: 0%;"></div>
-          <div class="footprint reached" style="left: 21%;"></div>
-          <div class="footprint reached" style="left: 42%;"></div>
+          <div class="footprint" style="left: 21%;"></div>
+          <div class="footprint" style="left: 42%;"></div>
           <div class="footprint" style="left: 63%;"></div>
           <div class="footprint" style="left: 84%;"></div>
           <div class="footprint" style="left: 100%;"></div>
         </div>
 
         <p class="text-sm text-ink/60">
-          Meta y avance de ejemplo — actualízalos con las cifras reales de la
-          campaña. Cada huella marca un 20% del camino recorrido.
+          Iniciamos este camino con mucha fe. Cada huella marcará el avance hacia la recuperación.
         </p>
       </div>
     </div>
   </section>
 
+  <!-- AGRADECIMIENTOS -->
   <section id="agradecimientos" class="bg-white border-b border-stone py-16">
     <div class="max-w-3xl mx-auto px-6">
       <p class="uppercase tracking-widest text-sm text-brandGreen font-semibold mb-3 text-center">Gracias por caminar conmigo</p>
@@ -218,31 +224,44 @@
     </div>
   </section>
 
+  <!-- CÓMO DONAR -->
   <section id="donar" class="bg-white">
     <div class="max-w-5xl mx-auto px-6 py-16">
       <p class="uppercase tracking-widest text-sm text-brandGreen font-semibold mb-3 text-center">Cómo donar</p>
       <h2 class="display text-3xl font-semibold mb-10 text-center text-ink2">Elige el medio que más te facilite</h2>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Tarjeta NU -->
         <div class="bg-gray-50 border border-stone rounded-2xl p-6">
-          <h3 class="display text-xl font-semibold mb-2 text-ink2">Nequi</h3>
-          <p class="text-ink/70 text-sm mb-4">Transferencia directa desde la app.</p>
-          <p class="font-mono text-lg font-semibold text-brandGreen">[ número de Nequi ]</p>
-          <p class="text-sm text-ink/60 mt-1">A nombre de: Rubén Darío Piñeros</p>
+          <h3 class="display text-xl font-semibold mb-2 text-ink2">Cuenta Nu</h3>
+          <p class="text-ink/70 text-sm mb-4">Transferencia a cuenta Nubank.</p>
+          <p class="font-mono text-lg font-semibold text-brandGreen">43542952</p>
+          <p class="text-sm text-ink/60 mt-1">A nombre de: Guillermo Sarmiento</p>
+          <p class="text-sm text-ink/60">C.C: 1192773119</p>
         </div>
 
+        <!-- Tarjeta LLAVES -->
         <div class="bg-gray-50 border border-stone rounded-2xl p-6">
-          <h3 class="display text-xl font-semibold mb-2 text-ink2">Bancolombia</h3>
-          <p class="text-ink/70 text-sm mb-4">Cuenta de ahorros.</p>
-          <p class="font-mono text-lg font-semibold text-brandGreen">[ número de cuenta ]</p>
-          <p class="text-sm text-ink/60 mt-1">A nombre de: Rubén Darío Piñeros</p>
+          <h3 class="display text-xl font-semibold mb-2 text-ink2">Llaves</h3>
+          <p class="text-ink/70 text-sm mb-4">Transferencia mediante llaves:</p>
+          <ul class="font-mono text-base font-semibold text-brandGreen space-y-2">
+            <li>@plata3007289552</li>
+            <li>@GSP119</li>
+            <li>@LPB312</li>
+          </ul>
+          <p class="text-sm text-ink/60 mt-4">Aparecen a nombre de: <strong class="text-ink2">gui***** sar****</strong></p>
+          <p class="text-sm text-ink/60 mt-4">Aparecen a nombre de: <strong class="text-ink2">lin**** Pi****</strong></p>
         </div>
 
+        <!-- Tarjeta OTROS (Opcional) -->
         <div class="bg-gray-50 border border-stone rounded-2xl p-6">
           <h3 class="display text-xl font-semibold mb-2 text-ink2">En persona</h3>
           <p class="text-ink/70 text-sm mb-4">Si prefieres entregar tu aporte directamente.</p>
-          <p class="text-sm text-ink/70">Contacta a: [ nombre y teléfono de contacto de la familia ]</p>
+          <p class="text-sm text-ink/60 mt-1">Contacta a: <strong>Angélica Sarmiento</strong></p>
+          <p class="font-mono text-lg font-semibold text-brandGreen mt-1">3133894346</p>
         </div>
+        
       </div>
 
       <p class="text-center text-ink/50 text-sm mt-8">
@@ -252,6 +271,7 @@
     </div>
   </section>
 
+  <!-- MENSAJE FINAL -->
   <section class="bg-gray-50 border-y border-stone">
     <div class="max-w-3xl mx-auto px-6 py-12 text-center">
       <div class="bg-white border-l-4 border-brandGreen p-6 rounded-r-xl max-w-xl mx-auto text-left shadow-sm">
@@ -263,6 +283,7 @@
     </div>
   </section>
 
+  <!-- OTRAS FORMAS DE AYUDAR -->
   <section class="bg-white max-w-3xl mx-auto px-6 py-16 text-center">
     <h2 class="display text-2xl text-ink2 font-semibold mb-4">¿No puedes donar? También ayuda compartir</h2>
     <p class="text-ink/70 mb-6 max-w-md mx-auto">
@@ -274,11 +295,12 @@
     </button>
   </section>
 
+  <!-- FOOTER -->
   <footer class="border-t border-stone bg-gray-50">
     <div class="max-w-5xl mx-auto px-6 py-10 text-center text-sm text-ink/60">
       <p class="font-medium text-ink mb-3">Cada aporte cambia una vida. Gracias por creer en las segundas oportunidades.</p>
-      <a href="#donar" class="inline-block mb-6 font-semibold text-brandGreen hover:text-brandGreenHover transition-colors">Quiero donar ahora ❤️</a>
-      <p>Contacto: [ correo o teléfono ]</p>
+      <a href="#donar" class="inline-block mb-4 font-semibold text-brandGreen hover:text-brandGreenHover transition-colors">Quiero donar ahora ❤️</a>
+      <p class="mt-2 text-xs">Contacto: Angélica Sarmiento — 3133894346</p>
     </div>
   </footer>
 
